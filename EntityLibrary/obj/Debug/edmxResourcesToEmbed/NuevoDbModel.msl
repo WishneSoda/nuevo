@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NuevoDBModelStoreContainer" CdmEntityContainer="NuevoDBConnStr">
+    <EntitySetMapping Name="UserLogin">
+      <EntityTypeMapping TypeName="NuevoDBModel.UserLogin">
+        <MappingFragment StoreEntitySet="UserLogin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TargetApps">
+      <EntityTypeMapping TypeName="NuevoDBModel.TargetApps">
+        <MappingFragment StoreEntitySet="TargetApps">
+          <ScalarProperty Name="UserLoginID" ColumnName="UserLoginID" />
+          <ScalarProperty Name="IntervalType" ColumnName="IntervalType" />
+          <ScalarProperty Name="TimeInterval" ColumnName="TimeInterval" />
+          <ScalarProperty Name="TargetUrl" ColumnName="TargetUrl" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailSettings">
+      <EntityTypeMapping TypeName="NuevoDBModel.EmailSettings">
+        <MappingFragment StoreEntitySet="EmailSettings">
+          <ScalarProperty Name="UserLoginID" ColumnName="UserLoginID" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="FromMailPassword" ColumnName="FromMailPassword" />
+          <ScalarProperty Name="ToMail" ColumnName="ToMail" />
+          <ScalarProperty Name="FromMail" ColumnName="FromMail" />
+          <ScalarProperty Name="MailSubject" ColumnName="MailSubject" />
+          <ScalarProperty Name="SmtpServer" ColumnName="SmtpServer" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="NuevoDBModel.ErrorLogs">
+        <MappingFragment StoreEntitySet="ErrorLogs">
+          <ScalarProperty Name="LogMsg" ColumnName="LogMsg" />
+          <ScalarProperty Name="UserLoginID" ColumnName="UserLoginID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

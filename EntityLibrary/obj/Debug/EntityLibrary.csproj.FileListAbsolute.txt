@@ -1,0 +1,9 @@
+D:\PROJECTS\VS PROJECTS\NuevoProject\EntityLibrary\bin\Debug\EntityLibrary.dll.config
+D:\PROJECTS\VS PROJECTS\NuevoProject\EntityLibrary\bin\Debug\EntityLibrary.dll
+D:\PROJECTS\VS PROJECTS\NuevoProject\EntityLibrary\bin\Debug\EntityLibrary.pdb
+D:\PROJECTS\VS PROJECTS\NuevoProject\EntityLibrary\bin\Debug\EntityFramework.dll
+D:\PROJECTS\VS PROJECTS\NuevoProject\EntityLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\PROJECTS\VS PROJECTS\NuevoProject\EntityLibrary\bin\Debug\EntityFramework.xml
+D:\PROJECTS\VS PROJECTS\NuevoProject\EntityLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\PROJECTS\VS PROJECTS\NuevoProject\EntityLibrary\obj\Debug\EntityLibrary.dll
+D:\PROJECTS\VS PROJECTS\NuevoProject\EntityLibrary\obj\Debug\EntityLibrary.pdb

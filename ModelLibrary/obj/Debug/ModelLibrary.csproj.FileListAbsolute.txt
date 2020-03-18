@@ -1,0 +1,5 @@
+D:\PROJECTS\VS PROJECTS\NuevoProject\ModelLibrary\bin\Debug\ModelLibrary.dll
+D:\PROJECTS\VS PROJECTS\NuevoProject\ModelLibrary\bin\Debug\ModelLibrary.pdb
+D:\PROJECTS\VS PROJECTS\NuevoProject\ModelLibrary\obj\Debug\ModelLibrary.csprojResolveAssemblyReference.cache
+D:\PROJECTS\VS PROJECTS\NuevoProject\ModelLibrary\obj\Debug\ModelLibrary.dll
+D:\PROJECTS\VS PROJECTS\NuevoProject\ModelLibrary\obj\Debug\ModelLibrary.pdb

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NuevoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TargetApps" Relationship="NuevoDBModel.FK_TargetApps_UserLogin" FromRole="UserLogin" ToRole="TargetApps" />
+    <NavigationProperty Name="EmailSettings" Relationship="NuevoDBModel.FK_EmailSettings_UserLogin" FromRole="UserLogin" ToRole="EmailSettings" />
+    <NavigationProperty Name="ErrorLogs" Relationship="NuevoDBModel.FK_ErrorLogs_UserLogin" FromRole="UserLogin" ToRole="ErrorLogs" />
+  </EntityType>
+  <EntityContainer Name="NuevoDBConnStr" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserLogin" EntityType="Self.UserLogin" />
+    <EntitySet Name="TargetApps" EntityType="NuevoDBModel.TargetApps" />
+    <AssociationSet Name="FK_TargetApps_UserLogin" Association="NuevoDBModel.FK_TargetApps_UserLogin">
+      <End Role="UserLogin" EntitySet="UserLogin" />
+      <End Role="TargetApps" EntitySet="TargetApps" />
+    </AssociationSet>
+    <EntitySet Name="EmailSettings" EntityType="NuevoDBModel.EmailSettings" />
+    <AssociationSet Name="FK_EmailSettings_UserLogin" Association="NuevoDBModel.FK_EmailSettings_UserLogin">
+      <End Role="UserLogin" EntitySet="UserLogin" />
+      <End Role="EmailSettings" EntitySet="EmailSettings" />
+    </AssociationSet>
+    <EntitySet Name="ErrorLogs" EntityType="NuevoDBModel.ErrorLogs" />
+    <AssociationSet Name="FK_ErrorLogs_UserLogin" Association="NuevoDBModel.FK_ErrorLogs_UserLogin">
+      <End Role="UserLogin" EntitySet="UserLogin" />
+      <End Role="ErrorLogs" EntitySet="ErrorLogs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TargetApps">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TargetUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeInterval" Type="Int32" />
+    <Property Name="IntervalType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="UserLoginID" Type="Int32" />
+    <NavigationProperty Name="UserLogin" Relationship="NuevoDBModel.FK_TargetApps_UserLogin" FromRole="TargetApps" ToRole="UserLogin" />
+  </EntityType>
+  <Association Name="FK_TargetApps_UserLogin">
+    <End Type="NuevoDBModel.UserLogin" Role="UserLogin" Multiplicity="0..1" />
+    <End Type="NuevoDBModel.TargetApps" Role="TargetApps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserLogin">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TargetApps">
+        <PropertyRef Name="UserLoginID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EmailSettings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SmtpServer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MailSubject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FromMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ToMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FromMailPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Port" Type="Int32" />
+    <Property Name="UserLoginID" Type="Int32" />
+    <NavigationProperty Name="UserLogin" Relationship="NuevoDBModel.FK_EmailSettings_UserLogin" FromRole="EmailSettings" ToRole="UserLogin" />
+  </EntityType>
+  <Association Name="FK_EmailSettings_UserLogin">
+    <End Type="NuevoDBModel.UserLogin" Role="UserLogin" Multiplicity="0..1" />
+    <End Type="NuevoDBModel.EmailSettings" Role="EmailSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserLogin">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmailSettings">
+        <PropertyRef Name="UserLoginID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ErrorLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UserLoginID" Type="Int32" />
+    <Property Name="LogMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserLogin" Relationship="NuevoDBModel.FK_ErrorLogs_UserLogin" FromRole="ErrorLogs" ToRole="UserLogin" />
+  </EntityType>
+  <Association Name="FK_ErrorLogs_UserLogin">
+    <End Type="NuevoDBModel.UserLogin" Role="UserLogin" Multiplicity="0..1" />
+    <End Type="NuevoDBModel.ErrorLogs" Role="ErrorLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserLogin">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ErrorLogs">
+        <PropertyRef Name="UserLoginID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
