@@ -1,18 +1,15 @@
 ﻿using EntityLibrary;
-using Newtonsoft.Json;
 using RepositoryLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace WebApiApplication.Controllers
 {
     public class LoginAPIController : ApiController
     {
-
+        //denemeeeee
         [HttpPost]
         [Authorize]
         public UserLogin GetLoginUser(dynamic param)
