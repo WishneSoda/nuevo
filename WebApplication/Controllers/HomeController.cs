@@ -1,10 +1,7 @@
 ﻿using EntityLibrary;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WebApplication.Models;
 
@@ -12,7 +9,7 @@ namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        // GET: Home ddddd
         public ActionResult TargetApps()
         {
             return View();
